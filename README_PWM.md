@@ -1,9 +1,10 @@
-# Arduino_Mega TIMER
+# Arduino_Mega TIMER PWM
 
 
-Arduino mega pins and hardware Timers
+Arduino mega pins and hardware Timers PWM
 
-Timer  | output	 |Arduino| Chip |  BIT  |  BIT    
+
+Timer  | output	 |  PIN  | Chip |  BIT  |  NOTES    
 -------|---------|-------|------|-------|---------
 Timer0 |  OCR0A	 |  4	   |  	  |  8    |
 Timer0 |  OCR0B	 |  13   |  	  |  8    |
