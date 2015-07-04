@@ -20,10 +20,10 @@ void Init_PWM1(PulseCH1)
   pinMode(13,OUTPUT);
  
   TCCR1A =((1<<WGM11)|(1<<COM1A1)|(1<<COM1B1)|(1<<COM1C1));  
-  TCCR1B = (1<<WGM13)|(1<<WGM12)|(1<<CS11); //Prescaler= 8 (approx resolution of 2us) page 134 of data sheet
+  TCCR1B = (1<<WGM13)|(1<<WGM12)|(1<<CS11); //Prescaler= 8 (approx resolution of 1us as tested) page 134 of data sheet
   OCR1A = PulseCH1; //PB5, none
-  OCR1B = PulseCH1; //PB6, OUT2
-  OCR1C = PulseCH1; //PB7  OUT3
+  OCR1B = PulseCH1; //PB6, channel2
+  OCR1C = PulseCH1; //PB7  channel3
    ICR1 = Top_400hz; //400hz freq = {MCU_freq 16Mhz/prescaler 8)/Desired_frequency 400hz} is (16000000hz/8)/400hz=5000
 }
 
@@ -39,10 +39,10 @@ void Init_PWM3(PulseCH3)
 
 
   TCCR3A =((1<<WGM31)|(1<<COM3A1)|(1<<COM3B1)|(1<<COM3C1));   
-  TCCR3B = (1<<WGM33)|(1<<WGM32)|(1<<CS31); //Prescaler= 8 (approx resolution of 2us) page 134 of data sheet
+  TCCR3B = (1<<WGM33)|(1<<WGM32)|(1<<CS31); //Prescaler= 8 (approx resolution of 1us as tested) page 134 of data sheet
    OCR3A = PulseCH3; //PE3, Not Usable
-   OCR3B = PulseCH3; //PE4, OUT7 
-   OCR3C = PulseCH3; //PE5, OUT6 
+   OCR3B = PulseCH3; //PE4, channel7 
+   OCR3C = PulseCH3; //PE5, channel6 
     ICR3 = Top_400hz ; //400hz freq = {MCU_freq 16Mhz/prescaler 8)/Desired_frequency 400hz} is (16000000hz/8)/400hz=5000
 }
 
@@ -55,11 +55,11 @@ void Init_PWM4(void)
   pinMode(7,  OUTPUT);
   pinMode(8,  OUTPUT);
   TCCR4A = ((1<<WGM41)|(1<<COM4C1)|(1<<COM4B1)|(1<<COM4A1));  
-  TCCR4B = ((1<<WGM43)|(1<<WGM42)|(1<<CS41); 
+  TCCR4B = ((1<<WGM43)|(1<<WGM42)|(1<<CS41);  //Prescaler= 8 (approx resolution of 1us as tested) page 134 of data sheet
   
   OCR4A = PulseCH4; // Not Usable 
-  OCR4B = PulseCH4; //PH4, OUT5
-  OCR4C = PulseCH4; //PH5, OUT4
+  OCR4B = PulseCH4; //PH4, channel5
+  OCR4C = PulseCH4; //PH5, channel4
    ICR3 = Top_050hz ; //50hz freq = {MCU_freq 16Mhz/prescaler 8)/Desired_frequency 50hz} is (16000000hz/8)/50hz=40000 
 }
 
@@ -74,9 +74,9 @@ void Init_PWM5(void)
   pinMode(46,OUTPUT);
   
   TCCR5A =((1<<WGM51)|(1<<COM5A1)|(1<<COM5B1)|(1<<COM5C1)); 
-  TCCR5B = (1<<WGM53)|(1<<WGM52)|(1<<CS51); //Prescaler to 8
+  TCCR5B = (1<<WGM53)|(1<<WGM52)|(1<<CS51);  //Prescaler= 8 (approx resolution of 1us as tested) page 134 of data sheet
   OCR5A = PulseCH5; //PL3, 
-  OCR5B = PulseCH5; //PL4, OUT0
-  OCR5C = PulseCH5; //PL5  OUT1
+  OCR5B = PulseCH5; //PL4, channel0
+  OCR5C = PulseCH5; //PL5  channel1
    ICR5 = Top_400hz ; //400hz freq = {MCU_freq 16Mhz/prescaler 8)/Desired_frequency 400hz} is (16000000hz/8)/400hz=5000
 }
