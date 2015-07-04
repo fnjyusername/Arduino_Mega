@@ -2,6 +2,7 @@
 
 
 Arduino mega pins and hardware Timers
+
 Timer  | output	 |Arduino| Chip |  BIT  |  BIT    
 -------|---------|-------|------|-------|---------
 Timer0 |  OCR0A	 |  4	   |  	  |  8    |
